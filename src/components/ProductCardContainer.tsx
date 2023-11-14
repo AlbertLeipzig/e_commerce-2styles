@@ -19,7 +19,7 @@ interface ProductCardContainerProps {
   cardsData: CardData[];
 }
 
-const ProductCardContainer: React.FC<ProductCardContainerProps> = ({
+export const ProductCardContainer: React.FC<ProductCardContainerProps> = ({
   button,
   cardsData,
 }) => {
