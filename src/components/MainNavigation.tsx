@@ -7,25 +7,13 @@ export const MainNavigation = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
-        </li>
-        <li>
-          <NavLink to="/account">Account</NavLink>
-        </li>
-        <li>
-          <NavLink to="/auth">Auth</NavLink>
-        </li>
-        <li>
-          <NavLink to="/cart">Cart</NavLink>
-        </li>
-        <li>
-          <NavLink to="/checkout">Checkout</NavLink>
-        </li>
-        <li>
           <NavLink to="/contact">Contact</NavLink>
         </li>
         <li>
-          <NavLink to="/wishlist">Wishlist</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          <NavLink to="/auth">Sign Up</NavLink>
         </li>
       </ul>
     </nav>
