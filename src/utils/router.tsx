@@ -13,7 +13,7 @@ import { WishListPage } from '../pages/WishListPage';
 import { PrivacyPolicyPage } from '../pages/PrivacyPolicyPage';
 import { TermsOfUsePage } from '../pages/TermsOfUsePage';
 import { FAQPage } from '../pages/FAQPage';
-
+import { PasswordRecoverPage } from '../pages/PasswordRecoverPage';
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -67,6 +67,10 @@ export const router = createBrowserRouter([
       {
         path: '/faq',
         element: <FAQPage />,
+      },
+      {
+        path: '/password-recover',
+        element: <PasswordRecoverPage />,
       },
     ],
   },
