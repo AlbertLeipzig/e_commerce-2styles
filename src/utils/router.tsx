@@ -10,6 +10,9 @@ import { ErrorPage } from '../pages/ErrorPage';
 import { HomePage } from '../pages/HomePage';
 import { SingleProductPage } from '../pages/SingleProductPage';
 import { WishListPage } from '../pages/WishListPage';
+import { PrivacyPolicyPage } from '../pages/PrivacyPolicyPage';
+import { TermsOfUsePage } from '../pages/TermsOfUsePage';
+import { FAQPage } from '../pages/FAQPage';
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +55,18 @@ export const router = createBrowserRouter([
       {
         path: '/wishlist',
         element: <WishListPage />,
+      },
+      {
+        path: '/privacy-policy',
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: '/terms-of-use',
+        element: <TermsOfUsePage />,
+      },
+      {
+        path: '/faq',
+        element: <FAQPage />,
       },
     ],
   },
