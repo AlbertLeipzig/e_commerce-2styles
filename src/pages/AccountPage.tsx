@@ -1,8 +1,11 @@
-const userData = {
+import { IUser } from '../utils/interfaces';
+const userData: IUser = {
   firstName: '',
   lastName: '',
   email: '',
   address: '',
+  id: '',
+  img: '',
 };
 
 export const AccountPage = () => {

@@ -1,32 +1,17 @@
 import React from 'react';
-import { ProductCardContainer } from '../components/ProductCardContainer';
+import { IOrder } from '../utils/interfaces';
 
-interface SingleProductData {
-  images: string[];
-  title: string;
-  stars: number;
-  numberOfReviews: number;
-  price: number;
-  colors: string[];
-  description: string;
-}
-
-interface OrderData {
-  quantity: number;
-}
-
-const singleProductData: SingleProductData = {
+const singleProductData: IOrder = {
   images: ['', '', '', '', ''],
-  title: 'Product Title', // Add a default title or replace it with actual data
+  title: 'Product Title',
   stars: 4,
   numberOfReviews: 150,
   price: 195.0,
   colors: ['red', 'blue'],
   description:
     'PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.',
-};
-
-const orderData: OrderData = {
+  id: '',
+  fullPrice: 0,
   quantity: 2,
 };
 
@@ -50,13 +35,13 @@ export const SingleProductPage: React.FC = () => {
         <div>
           <h2>Colors :</h2>
           {singleProductData.colors.map((color, index) => (
-            <div key={index} value={color}></div>
+            <input type="checkbox" key={index} value={color}></input>
           ))}
         </div>
         <div className="info-container__action-container">
           <div>
             <button>-</button>
-            <input type="text" placeholder={orderData.quantity.toString()} />
+            <input type="text" placeholder={singleProductData.quantity.toString()} />
             <button>+</button>
           </div>
           <button>Buy Now</button>

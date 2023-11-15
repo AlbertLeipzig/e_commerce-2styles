@@ -1,21 +1,12 @@
 import React from 'react';
+import { IProduct } from '../utils/interfaces';
 
-interface IProps {
-  id: string;
-  title: string;
-  price: number;
-  fullPrice: number;
-  stars: number;
-  reviews: number;
-}
-
-export const ProductCard: React.FC<IProps> = ({
-  id,
+export const ProductCard: React.FC<IProduct> = ({
   title,
   price,
   fullPrice,
   stars,
-  reviews,
+  numberOfReviews,
 }) => {
   return (
     <div className="product-card">
@@ -26,7 +17,7 @@ export const ProductCard: React.FC<IProps> = ({
         <p>{fullPrice}</p>
       </div>
       <p>{Array.from({ length: stars }, () => '*').join('')}</p>
-      <p>{reviews}</p>
+      <p>{numberOfReviews}</p>
     </div>
   );
 };

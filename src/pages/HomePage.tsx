@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import { IDeadline, IRemainingTime, IProduct } from '../utils/interfaces';
 import { NavLink } from 'react-router-dom';
 import { ProductCardContainer } from '../components/ProductCardContainer';
 
 const productsData = {
-  todayProducts: [],
-  monthProducts: [],
-  ourProducts: [],
+  todayProducts: [] as IProduct[],
+  monthProducts: [] as IProduct[],
+  ourProducts: [] as IProduct[],
 };
 
 const categories = [
@@ -61,28 +62,14 @@ const categories = [
   },
 ];
 
-const deadline: Deadline = {
+const deadline: IDeadline = {
   day: 11,
   month: 12,
   hour: 0,
   minute: 0,
 };
 
-interface Deadline {
-  day: number;
-  month: number;
-  hour: number;
-  minute: number;
-}
-
-interface TimeRemaining {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
-
-const calculateTimeToDeadline = (): TimeRemaining => {
+const calculateTimeToDeadline = (): IRemainingTime => {
   const now: Date = new Date();
 
   const deadlineDate: Date = new Date(
@@ -112,7 +99,7 @@ const calculateTimeToDeadline = (): TimeRemaining => {
 };
 
 export const HomePage = () => {
-  const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(() =>
+  const [timeRemaining, setTimeRemaining] = useState<IRemainingTime>(() =>
     calculateTimeToDeadline()
   );
 

@@ -1,8 +1,5 @@
-interface IProps {
-  text: string;
-  action: () => void;
-}
+import { IButton } from '../utils/interfaces';
 
-export const Button: React.FC<IProps> = ({ text, action }) => {
+export const Button: React.FC<IButton> = ({ text, action }) => {
   return <button onClick={action}>{text}</button>;
 };

@@ -1,22 +1,11 @@
 import React from 'react';
 import { Button } from './Button';
 import { ProductCard } from './Product_Card';
-
-interface CardData {
-  id: string;
-  title: string;
-  price: number;
-  fullPrice: number;
-  stars: number;
-  reviews: number;
-}
+import { IButton, IProduct } from '../utils/interfaces';
 
 interface ProductCardContainerProps {
-  button: {
-    text: string;
-    action: () => void;
-  };
-  cardsData: CardData[];
+  button: IButton;
+  cardsData: IProduct[];
 }
 
 export const ProductCardContainer: React.FC<ProductCardContainerProps> = ({
