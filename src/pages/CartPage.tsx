@@ -1,35 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import { IOrder } from '../utils/interfaces';
+import appData from '../utils/fakeData.json';
 
-const cartData: IOrder[] = [
-  {
-    id: '',
-    title: 'H1 Gamepad',
-    price: 650,
-    fullPrice: 650,
-    stars: 5,
-    numberOfReviews: 120,
-    images: [''],
-    colors: [''],
-    description: 'string',
-    quantity: 2,
-  },
-  {
-    id: 'string',
-    title: 'LCD Monitor',
-    price: 1100,
-    fullPrice: 1100,
-    stars: 3,
-    numberOfReviews: 150,
-    images: [''],
-    colors: [''],
-    description: 'string',
-    quantity: 3,
-  },
-];
+const { orders }: { orders: IOrder[] } = appData;
 
 const calculateCosts = () => {
-  const singleProductSubtotal = cartData.map(
+  const singleProductSubtotal = orders.map(
     (product) => product.price * product.quantity
   );
   const subtotal = singleProductSubtotal.reduce((acc, curr) => acc + curr, 0);
@@ -49,7 +25,7 @@ export const CartPage = () => {
           <td>Quantity</td>
           <td>Subtotal</td>
         </th>
-        {cartData.map((product) => (
+        {orders.map((product) => (
           <tr>
             <td>{product.images[0]}</td>
             <td>${product.price}</td>

@@ -55,12 +55,18 @@ function updateContent(jsonData) {
   jsonData.products.forEach((product) => {
     product.images = generateImagesArray();
     product.colors = generateColorsArray();
+    product.id = Math.random().toString(16).slice(2);
   });
   jsonData.orders.forEach((order) => {
     order.images = generateImagesArray();
     order.colors = generateColorsArray();
+    order.id = Math.random().toString(16).slice(2);
+    order.quantity = Math.ceil(Math.random() * 5);
   });
-  jsonData.employees = employeesSocialMedia;
+  jsonData.employees.forEach((employee) => {
+    employee.socialMedia = employeesSocialMedia;
+    employee.id = Math.random().toString(16).slice(2);
+  });
   return jsonData;
 }
 

@@ -2,10 +2,8 @@ import React from 'react';
 import { IProduct } from '../utils/interfaces';
 import { ProductCardContainer } from '../components/ProductCardContainer';
 
-interface IProps extends IProduct {}
-
-const wishlistData: IProps[] = [];
-const userRecommendationsData: IProps[] = [];
+const wishlistData: IProduct[] = [];
+const userRecommendationsData: IProduct[] = [];
 
 export const WishListPage: React.FC = () => {
   return (
