@@ -1,21 +1,16 @@
-import React from 'react';
-import { IOrder } from '../utils/interfaces';
+import { useState } from 'react';
+import { IProduct } from '../utils/interfaces';
+import appData from '../utils/fakeData.json';
 
-const singleProductData: IOrder = {
-  images: ['', '', '', '', ''],
-  title: 'Product Title',
-  stars: 4,
-  numberOfReviews: 150,
-  price: 195.0,
-  colors: ['red', 'blue'],
-  description:
-    'PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.',
-  id: '',
-  fullPrice: 0,
-  quantity: 2,
-};
+const singleProductData: IProduct = appData.orders[0];
 
 export const SingleProductPage: React.FC = () => {
+  const [orderQuantity, setOrderQuantity] = useState(0);
+
+  const handleOrderQuantityChange = () => {
+    setOrderQuantity(orderQuantity < 1 ? 0 : orderQuantity - 1);
+  };
+
   return (
     <div className="single-product-page">
       <div className="images-container">
@@ -40,9 +35,9 @@ export const SingleProductPage: React.FC = () => {
         </div>
         <div className="info-container__action-container">
           <div>
-            <button>-</button>
-            <input type="text" placeholder={singleProductData.quantity.toString()} />
-            <button>+</button>
+            <button onClick={handleOrderQuantityChange}>-</button>
+            <input type="text" placeholder={`${orderQuantity}`} />
+            <button onClick={handleOrderQuantityChange}>+</button>
           </div>
           <button>Buy Now</button>
           <button onClick={() => console.log('add to wishlist')}>

@@ -3,14 +3,6 @@ export interface IButton {
   action: () => void;
 }
 
-export interface ICardData {
-  id: string;
-  title: string;
-  price: number;
-  fullPrice: number;
-  stars: number;
-}
-
 export interface IDeadline {
   day: number;
   month: number;

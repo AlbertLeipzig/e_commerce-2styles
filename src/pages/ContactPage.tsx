@@ -1,3 +1,8 @@
+import { IUser } from '../utils/interfaces';
+import appData from '../utils/fakeData.json';
+
+const { user }: { user: IUser } = appData;
+
 export const ContactPage = () => {
   return (
     <div className="contact-page">
@@ -19,8 +24,8 @@ export const ContactPage = () => {
         </div>
       </div>
       <form action="">
-        <input type="text" placeholder="Your Name" />
-        <input type="text" placeholder="Your Email" />
+        <input type="text" placeholder={`${user.firstName} ${user.lastName}`} />
+        <input type="text" placeholder={user.email} />
         <input type="text" placeholder="Your Phone" />
         <textarea placeholder="Your Message"></textarea>
         <button>Send Message</button>

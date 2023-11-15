@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react';
 import { IDeadline, IRemainingTime, IProduct } from '../utils/interfaces';
 import { NavLink } from 'react-router-dom';
 import { ProductCardContainer } from '../components/ProductCardContainer';
+import appData from '../utils/fakeData.json';
 
-const productsData = {
-  todayProducts: [] as IProduct[],
-  monthProducts: [] as IProduct[],
-  ourProducts: [] as IProduct[],
-};
+const { products }: { products: IProduct[] } = appData;
+
+const [todayProducts, monthProducts, ourProducts] = [
+  products.slice(0, 20),
+  products.slice(30, 50),
+  products.slice(80),
+];
 
 const categories = [
   {
@@ -192,7 +195,7 @@ export const HomePage = () => {
           text: 'View All Products',
           action: () => console.log('test'),
         }}
-        cardsData={productsData.todayProducts}
+        cardsData={todayProducts}
       />
       <div className="categories-navigation">
         {categories.map((category) => (
@@ -207,7 +210,7 @@ export const HomePage = () => {
           text: 'View All Products',
           action: () => console.log('test'),
         }}
-        cardsData={productsData.monthProducts}
+        cardsData={monthProducts}
       />
       <div className="selected-product">
         <h3>Categories</h3>
@@ -233,7 +236,7 @@ export const HomePage = () => {
           text: 'View All Products',
           action: () => console.log('test'),
         }}
-        cardsData={productsData.ourProducts}
+        cardsData={ourProducts}
       />{' '}
       <div className="featured">
         <h2>New Arrival</h2>

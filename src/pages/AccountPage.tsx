@@ -1,15 +1,9 @@
 import { IUser } from '../utils/interfaces';
-const userData: IUser = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  address: '',
-  id: '',
-  img: '',
-};
+import appData from '../utils/fakeData.json';
+const { user }: { user: IUser } = appData;
 
 export const AccountPage = () => {
-  const { firstName, lastName, email, address } = userData;
+  const { firstName, lastName, email, address } = user;
   return (
     <div className="account-page">
       <h2>
