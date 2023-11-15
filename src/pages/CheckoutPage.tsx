@@ -36,14 +36,20 @@ export const CheckoutPage = () => {
         </div>
         <div className="cart-container__invoice">
           <div>
-            <p>Subtotal: {calculateCosts().subtotal} $</p>{' '}
+            <p>Subtotal:</p>
+            <p>{calculateCosts().subtotal} $</p>
+          </div>
+          <div>
+            <p>Shipping:</p>
             <p>
-              Shipping:{' '}
               {calculateCosts().shipping === 0
                 ? 'Free'
                 : `${calculateCosts().shipping} $`}
             </p>
-            <p>Total: {calculateCosts().total} $</p>
+          </div>
+          <div>
+            <p>Total:</p>
+            <p>{calculateCosts().total} $</p>
           </div>
         </div>
         <div className="cart-container__payment-system">
