@@ -1,0 +1,18 @@
+$orange: orange;
+
+@mixin button($bg-color: $orange) {
+  padding: 0.5em 1.45em;
+  margin: 0 auto;
+  display: block;
+  color : $white;
+  background-color: $bg-color;
+}
+
+.base__button {
+  @include button($orange);
+}
+
+.empty-button {
+  @include button($);
+  background: none;
+}
