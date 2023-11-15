@@ -1,6 +1,9 @@
-const employeesData = [
+import { IEmployee } from '../utils/interfaces';
+const employeesData: IEmployee[] = [
   {
     id: '1',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image1.jpg',
     firstName: 'John',
     lastName: 'Doe',
@@ -13,6 +16,8 @@ const employeesData = [
   },
   {
     id: '2',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image2.jpg',
     firstName: 'Jane',
     lastName: 'Smith',
@@ -25,6 +30,8 @@ const employeesData = [
   },
   {
     id: '16',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image16.jpg',
     firstName: 'Sam',
     lastName: 'Williams',
@@ -37,6 +44,8 @@ const employeesData = [
   },
   {
     id: '17',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image17.jpg',
     firstName: 'Olivia',
     lastName: 'Anderson',
@@ -49,6 +58,8 @@ const employeesData = [
   },
   {
     id: '14',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image14.jpg',
     firstName: 'Alex',
     lastName: 'Turner',
@@ -61,6 +72,8 @@ const employeesData = [
   },
   {
     id: '15',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image15.jpg',
     firstName: 'Emma',
     lastName: 'Johnson',
@@ -73,6 +86,8 @@ const employeesData = [
   },
   {
     id: '16',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image16.jpg',
     firstName: 'Sam',
     lastName: 'Williams',
@@ -85,6 +100,8 @@ const employeesData = [
   },
   {
     id: '17',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image17.jpg',
     firstName: 'Olivia',
     lastName: 'Anderson',
@@ -97,6 +114,8 @@ const employeesData = [
   },
   {
     id: '18',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image18.jpg',
     firstName: 'Max',
     lastName: 'Miller',
@@ -109,6 +128,8 @@ const employeesData = [
   },
   {
     id: '19',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image19.jpg',
     firstName: 'Sophie',
     lastName: 'Clark',
@@ -121,6 +142,8 @@ const employeesData = [
   },
   {
     id: '20',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image20.jpg',
     firstName: 'Ryan',
     lastName: 'Taylor',
@@ -133,6 +156,8 @@ const employeesData = [
   },
   {
     id: '21',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image21.jpg',
     firstName: 'Ella',
     lastName: 'White',
@@ -145,6 +170,8 @@ const employeesData = [
   },
   {
     id: '22',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image22.jpg',
     firstName: 'Chris',
     lastName: 'Brown',
@@ -157,6 +184,8 @@ const employeesData = [
   },
   {
     id: '23',
+    email: 'test@mail.com',
+    address: 'test address',
     img: 'path/to/image23.jpg',
     firstName: 'Mia',
     lastName: 'Robinson',
@@ -168,19 +197,6 @@ const employeesData = [
     },
   },
 ];
-
-interface IProps {
-  id: string;
-  img: string;
-  firstName: string;
-  lastName: string;
-  role: string;
-  socialMedia: {
-    tw: string;
-    ig: string;
-    li: string;
-  };
-}
 
 export const AboutPage = () => {
   return (
@@ -224,7 +240,7 @@ export const AboutPage = () => {
         </div>
       </section>
       <section className="employees">
-        {employeesData.map((employee: IProps) => (
+        {employeesData.map((employee) => (
           <div className="employee-card" key={employee.id}>
             <img
               src={employee.img}

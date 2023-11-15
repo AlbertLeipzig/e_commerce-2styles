@@ -1,19 +1,34 @@
-const cartData = [
+import { IOrder } from '../utils/interfaces';
+const cartData: IOrder[] = [
   {
-    img: '',
+    id: '',
     title: 'H1 Gamepad',
     price: 650,
+    fullPrice: 650,
+    stars: 5,
+    numberOfReviews: 120,
+    images: [''],
+    colors: [''],
+    description: 'string',
+    quantity: 2,
   },
   {
-    img: '',
+    id: 'string',
     title: 'LCD Monitor',
     price: 1100,
+    fullPrice: 1100,
+    stars: 3,
+    numberOfReviews: 150,
+    images: [''],
+    colors: [''],
+    description: 'string',
+    quantity: 2,
   },
 ];
 
 const calculateCosts = () => {
   const subtotal = cartData.reduce((acc, curr) => acc + curr.price, 0);
-  const shipping = subtotal > 500 ? 0 : subtotal * 0.2; // Corrected the shipping calculation
+  const shipping = subtotal > 500 ? 0 : subtotal * 0.2;
   const total = subtotal + shipping;
 
   return { subtotal, shipping, total };
@@ -28,7 +43,7 @@ export const CheckoutPage = () => {
         <div className="cart-container__products">
           {cartData.map((product, index) => (
             <div key={index}>
-              <img src={product.img} alt={`${product.title} image`} />
+              <img src={product.images[0]} alt={`${product.title} image`} />
               <h3>{product.title}</h3>
               <p>{product.price} $</p>
             </div>

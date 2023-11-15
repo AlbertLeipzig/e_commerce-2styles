@@ -1,17 +1,30 @@
 import { NavLink } from 'react-router-dom';
+import { IOrder } from '../utils/interfaces';
 
-const cartData = [
+const cartData: IOrder[] = [
   {
-    img: '',
+    id: '',
     title: 'H1 Gamepad',
     price: 650,
+    fullPrice: 650,
+    stars: 5,
+    numberOfReviews: 120,
+    images: [''],
+    colors: [''],
+    description: 'string',
     quantity: 2,
   },
   {
-    img: '',
+    id: 'string',
     title: 'LCD Monitor',
     price: 1100,
-    quantity: 1,
+    fullPrice: 1100,
+    stars: 3,
+    numberOfReviews: 150,
+    images: [''],
+    colors: [''],
+    description: 'string',
+    quantity: 3,
   },
 ];
 
@@ -38,7 +51,7 @@ export const CartPage = () => {
         </th>
         {cartData.map((product) => (
           <tr>
-            <td>{product.img}</td>
+            <td>{product.images[0]}</td>
             <td>${product.price}</td>
             <td>
               <select name="" id="">
@@ -53,8 +66,10 @@ export const CartPage = () => {
         <NavLink to="/">Return To Shop</NavLink>
       </button>
       <button>Update Cart</button>
-      <input type="text" for="coupon" placeholder="Coupon Code" />
-      <button>Apply Coupon</button>
+      <fieldset>
+        <input type="text" placeholder="Coupon Code" />
+        <button>Apply Coupon</button>
+      </fieldset>
       <div>
         <h3>Cart Total</h3>
         <div>

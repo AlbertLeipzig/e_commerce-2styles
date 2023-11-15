@@ -1,14 +1,8 @@
 import React from 'react';
+import { IProduct } from '../utils/interfaces';
 import { ProductCardContainer } from '../components/ProductCardContainer';
 
-interface IProps {
-  id: string;
-  title: string;
-  price: number;
-  fullPrice: number;
-  stars: number;
-  reviews: number;
-}
+interface IProps extends IProduct {}
 
 const wishlistData: IProps[] = [];
 const userRecommendationsData: IProps[] = [];
