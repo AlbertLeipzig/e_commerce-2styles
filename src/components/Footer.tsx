@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { FaRegCopyright } from 'react-icons/fa';
 export const Footer = () => {
   return (
     <footer>
@@ -55,6 +56,7 @@ export const Footer = () => {
         </a>
       </div>
       <div>
+        <FaRegCopyright />
         <p>Copyright Rimel 2022. All right reserved</p>
       </div>
     </footer>
