@@ -23,10 +23,10 @@ export const Header = () => {
         <div>
           <input type="text" placeholder="What are you looking for?" />
           <CiSearch />
-          <NavLink to="/wishlisht">
+          <NavLink to="/cart">
             <CiShoppingCart />
           </NavLink>
-          <NavLink to="/cart">
+          <NavLink to="/wishlist">
             <CiHeart />
           </NavLink>
         </div>
