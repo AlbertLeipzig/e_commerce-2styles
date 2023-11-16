@@ -1,10 +1,9 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { IRemainingTime, IProduct } from '../utils/interfaces';
 import { calculateTimeToDeadline } from '../utils/tools';
 import { NavLink } from 'react-router-dom';
 import { ProductCardContainer } from '../components/ProductCardContainer';
 import appData from '../utils/fakeData.json';
-import { AppContext } from '../utils/AppContext';
 import { Button } from '../components/Button';
 import { MdOutlineSmartphone, MdComputer } from 'react-icons/md';
 import { BsSmartwatch } from 'react-icons/bs';
@@ -13,6 +12,9 @@ import { SiYoutubegaming } from 'react-icons/si';
 import { MdOutlineScreenshotMonitor } from 'react-icons/md';
 import { TbDroneOff } from 'react-icons/tb';
 import { FaHome } from 'react-icons/fa';
+import { router } from '../utils/router';
+console.log(router);
+
 
 const categories = [
   {
@@ -62,7 +64,7 @@ export const HomePage = () => {
     calculateTimeToDeadline()
   );
 
-  const { products }: { products: IProduct[] } = useContext(AppContext);
+  const { products }: { products: IProduct[] } = appData;
 
   const [todayProducts, monthProducts, ourProducts] = [
     products.slice(0, 4),
