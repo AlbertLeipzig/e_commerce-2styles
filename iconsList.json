@@ -4,7 +4,7 @@
   "arrowDown": "<IoIosArrowDown />",
   "complete arrow left": "<FaArrowLeft />",
   "complete arrow right": "<FaArrowRight />",
-  "search / magnifying glass": "<IoIosArrowDown />",
+  "search / magnifying glass": "<CiSearch />",
   "heart / like": "<CiHeart />",
   "shopping cart": "<CiShoppingCart />",
   "smartphone": "<MdOutlineSmartphone />",
@@ -27,5 +27,6 @@
   "money bag": "<TbMoneybag />",
   "classic telephone": "<FaPhoneAlt />",
   "envelope": "<FaEnvelope />",
-  "copyright": "<FaRegCopyright />"
+  "copyright": "<FaRegCopyright />",
+  "star": "<CiStar />"
 }

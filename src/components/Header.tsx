@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { MainNavigation } from './MainNavigation';
+import { CiHeart, CiShoppingCart, CiSearch } from 'react-icons/ci';
 export const Header = () => {
   return (
     <header>
@@ -21,13 +22,13 @@ export const Header = () => {
         <MainNavigation />
         <div>
           <input type="text" placeholder="What are you looking for?" />
+          <CiSearch />
           <NavLink to="/wishlisht">
-            <img src="" alt="" />
+            <CiShoppingCart />
           </NavLink>
           <NavLink to="/cart">
-            <img src="" alt="" />
+            <CiHeart />
           </NavLink>
-          F{' '}
         </div>
       </div>
     </header>
