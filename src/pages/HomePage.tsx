@@ -5,64 +5,56 @@ import { NavLink } from 'react-router-dom';
 import { ProductCardContainer } from '../components/ProductCardContainer';
 import appData from '../utils/fakeData.json';
 import { Button } from '../components/Button';
+import { MdOutlineSmartphone, MdComputer } from 'react-icons/md';
+import { BsSmartwatch } from 'react-icons/bs';
+import { CiCamera, CiHeadphones, CiLaptop } from 'react-icons/ci';
+import { SiYoutubegaming } from 'react-icons/si';
+import { MdOutlineScreenshotMonitor } from 'react-icons/md';
+import { TbDroneOff } from 'react-icons/tb';
+import { FaHome } from 'react-icons/fa';
+import { router } from '../utils/router';
+console.log(router);
 
-const { products }: { products: IProduct[] } = appData;
-
-const [todayProducts, monthProducts, ourProducts] = [
-  products.slice(0, 4),
-  products.slice(50, 54),
-  products.slice(96, 100),
-];
 
 const categories = [
   {
-    icon: '',
-    path: '',
+    icon: <MdOutlineSmartphone />,
     text: 'phones',
   },
   {
-    icon: '',
-    path: '',
+    icon: <MdComputer />,
     text: 'computers',
   },
   {
-    icon: '',
-    path: '',
+    icon: <BsSmartwatch />,
     text: 'smartWatch',
   },
   {
-    icon: '',
-    path: '',
+    icon: <CiCamera />,
     text: 'camera',
   },
   {
-    icon: '',
-    path: '',
+    icon: <CiHeadphones />,
     text: 'headPhones',
   },
   {
-    icon: '',
-    path: '',
+    icon: <SiYoutubegaming />,
     text: 'gaming',
   },
   {
-    icon: '',
-    path: '',
+    icon: <MdOutlineScreenshotMonitor />,
     text: 'screens',
   },
   {
-    icon: '',
-    path: '',
+    icon: <CiLaptop />,
     text: 'notebooks',
   },
   {
-    icon: '',
-    path: '',
+    icon: <TbDroneOff />,
     text: 'Foto & Drohnen',
   },
   {
-    icon: '',
-    path: '',
+    icon: <FaHome />,
     text: 'Haushalt & Wohnen',
   },
 ];
@@ -71,6 +63,14 @@ export const HomePage = () => {
   const [timeRemaining, setTimeRemaining] = useState<IRemainingTime>(() =>
     calculateTimeToDeadline()
   );
+
+  const { products }: { products: IProduct[] } = appData;
+
+  const [todayProducts, monthProducts, ourProducts] = [
+    products.slice(0, 4),
+    products.slice(50, 54),
+    products.slice(96, 100),
+  ];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -128,7 +128,8 @@ export const HomePage = () => {
       <div className="categories-navigation">
         {categories.map((category, i) => (
           <NavLink to="" key={i}>
-            <img src={category.path} alt={`${category.text} icon`} />
+            {category.icon}
+
             <p>{category.text}</p>
           </NavLink>
         ))}
