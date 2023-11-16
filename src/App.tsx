@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 export const App = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Outlet />
       {/* <Footer /> */}
     </>

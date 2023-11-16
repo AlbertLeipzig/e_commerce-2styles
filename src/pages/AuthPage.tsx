@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 export const AuthPage = () => {
-  const [authView, setAuthView] = useState('login');
+  const [authView, setAuthView] = useState('signin');
 
   return (
     <div className="auth-page">
       <img src="" alt="" />
       <form action="">
         <h1>
-          {authView === 'login' ? 'Create an account' : 'Log in to Exclusive'}
+          {authView === 'login' ? 'Log in to Exclusive' : 'Create an account'}
         </h1>
         <p>Enter your details below</p>
         <form action="">
-          <input type="text" placeholder="Name" />
+          {authView === 'signin' && <input type="text" placeholder="Name" />}
+
           <input type="text" placeholder="Email or Phone Number" />
           <input type="text" placeholder="Password" />
           <div>
