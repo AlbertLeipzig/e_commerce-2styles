@@ -4,6 +4,7 @@ import { calculateTimeToDeadline } from '../utils/tools';
 import { NavLink } from 'react-router-dom';
 import { ProductCardContainer } from '../components/ProductCardContainer';
 import appData from '../utils/fakeData.json';
+import { Button } from '../components/Button';
 
 const { products }: { products: IProduct[] } = appData;
 
@@ -156,7 +157,7 @@ export const HomePage = () => {
             <span>{timeRemaining.seconds}</span>Seconds
           </p>
         </div>
-        <button>Buy Now!</button>
+        <Button text="Buy Now!" action={() => console.log('test')} />
       </div>
       <ProductCardContainer
         button={{

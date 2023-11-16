@@ -1,5 +1,6 @@
 import { IOrder } from '../utils/interfaces';
 import appData from '../utils/fakeData.json';
+import { Button } from '../components/Button';
 
 const { orders }: { orders: IOrder[] } = appData;
 
@@ -63,10 +64,10 @@ export const CheckoutPage = () => {
           </label>
           <div>
             <input type="text" placeholder="Coupon Code" />
-            <button>Apply Coupon</button>
+            <Button text="Apply Coupon" action={()=> console.log("test")} />
           </div>
         </div>
-        <button>Place Order</button>
+        <Button text="Place Order" action={()=> console.log("test")} />
       </div>
     </div>
   );

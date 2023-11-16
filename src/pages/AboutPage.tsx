@@ -46,7 +46,7 @@ export const AboutPage = () => {
         <div className="testimonial-card">
           <BiSolidShoppingBagAlt />
           <p>45.5k</p>
-          <h3>Customer active in our site</h3>
+          <h3>Customer active in our site</h3>º
         </div>
         <div className="testimonial-card">
           <TbMoneybag />

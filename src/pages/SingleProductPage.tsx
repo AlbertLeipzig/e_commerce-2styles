@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { IProduct } from '../utils/interfaces';
+import { Button } from '../components/Button';
 import appData from '../utils/fakeData.json';
 
 const singleProductData: IProduct = appData.orders[0];
@@ -7,9 +8,9 @@ const singleProductData: IProduct = appData.orders[0];
 export const SingleProductPage: React.FC = () => {
   const [orderQuantity, setOrderQuantity] = useState(0);
 
-  const handleOrderQuantityChange = () => {
+/*   const handleOrderQuantityChange = () => {
     setOrderQuantity(orderQuantity < 1 ? 0 : orderQuantity - 1);
-  };
+  }; */
 
   return (
     <div className="single-product-page">
@@ -35,11 +36,11 @@ export const SingleProductPage: React.FC = () => {
         </div>
         <div className="info-container__action-container">
           <div>
-            <button onClick={handleOrderQuantityChange}>-</button>
+            <Button text="-" action={() => console.log('test')} />
             <input type="text" placeholder={`${orderQuantity}`} />
-            <button onClick={handleOrderQuantityChange}>+</button>
+            <Button text="+" action={() => console.log('test')} />
           </div>
-          <button>Buy Now</button>
+          <Button text="Buy Now" action={() => console.log('test')} />
           <button onClick={() => console.log('add to wishlist')}>
             <img src="" alt="add to wishlist icon" />
           </button>

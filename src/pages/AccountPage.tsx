@@ -1,4 +1,5 @@
 import { IUser } from '../utils/interfaces';
+import { Button } from '../components/Button';
 import appData from '../utils/fakeData.json';
 const { user }: { user: IUser } = appData;
 
@@ -51,8 +52,8 @@ export const AccountPage = () => {
           <input type="text" placeholder="New Password" />
           <input type="text" placeholder="Confirm New Password" />
         </label>
-        <button>Cancel</button>
-        <button>Save Changes</button>
+        <Button text="Cancel" action={() => console.log('test')} />
+        <Button text="Save Changes" action={() => console.log('test')} />
       </form>
     </div>
   );
