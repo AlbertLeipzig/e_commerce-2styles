@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { IOrder } from '../utils/interfaces';
+import { Button } from '../components/Button';
 import appData from '../utils/fakeData.json';
 
 const { orders }: { orders: IOrder[] } = appData;
@@ -47,10 +48,10 @@ export const CartPage = () => {
       <button>
         <NavLink to="/">Return To Shop</NavLink>
       </button>
-      <button>Update Cart</button>
+      <Button text="Update Cart" action={() => console.log('test')} />
       <fieldset>
         <input type="text" placeholder="Coupon Code" />
-        <button>Apply Coupon</button>
+        <Button text="Apply Coupon" action={() => console.log('test')} />
       </fieldset>
       <div>
         <h3>Cart Total</h3>

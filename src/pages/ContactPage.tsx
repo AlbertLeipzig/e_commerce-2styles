@@ -1,4 +1,5 @@
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { Button } from '../components/Button';
 
 export const ContactPage = () => {
   return (
@@ -25,7 +26,7 @@ export const ContactPage = () => {
         <input type="text" placeholder="Your Email" />
         <input type="text" placeholder="Your Phone" />
         <textarea placeholder="Your Message"></textarea>
-        <button>Send Message</button>
+        <Button text="Send Message" action={() => console.log('test')} />
       </form>
     </div>
   );
