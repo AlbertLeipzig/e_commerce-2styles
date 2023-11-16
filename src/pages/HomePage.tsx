@@ -12,9 +12,6 @@ import { SiYoutubegaming } from 'react-icons/si';
 import { MdOutlineScreenshotMonitor } from 'react-icons/md';
 import { TbDroneOff } from 'react-icons/tb';
 import { FaHome } from 'react-icons/fa';
-import { router } from '../utils/router';
-console.log(router);
-
 
 const categories = [
   {
