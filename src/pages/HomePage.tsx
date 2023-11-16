@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { IDeadline, IRemainingTime, IProduct } from '../utils/interfaces';
+import { IRemainingTime, IProduct } from '../utils/interfaces';
+import { calculateTimeToDeadline } from '../utils/tools';
 import { NavLink } from 'react-router-dom';
 import { ProductCardContainer } from '../components/ProductCardContainer';
 import appData from '../utils/fakeData.json';
@@ -7,9 +8,9 @@ import appData from '../utils/fakeData.json';
 const { products }: { products: IProduct[] } = appData;
 
 const [todayProducts, monthProducts, ourProducts] = [
-  products.slice(0, 20),
-  products.slice(30, 50),
-  products.slice(80),
+  products.slice(0, 4),
+  products.slice(50, 54),
+  products.slice(96, 100),
 ];
 
 const categories = [
@@ -65,42 +66,6 @@ const categories = [
   },
 ];
 
-const deadline: IDeadline = {
-  day: 11,
-  month: 12,
-  hour: 0,
-  minute: 0,
-};
-
-const calculateTimeToDeadline = (): IRemainingTime => {
-  const now: Date = new Date();
-
-  const deadlineDate: Date = new Date(
-    now.getFullYear(),
-    deadline.month - 1,
-    deadline.day,
-    deadline.hour,
-    deadline.minute
-  );
-  const timeDifference: number = deadlineDate.getTime() - now.getTime();
-
-  const days: number = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-  const hours: number = Math.floor(
-    (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes: number = Math.floor(
-    (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-  );
-  const seconds: number = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-  return {
-    days,
-    hours,
-    minutes,
-    seconds,
-  };
-};
-
 export const HomePage = () => {
   const [timeRemaining, setTimeRemaining] = useState<IRemainingTime>(() =>
     calculateTimeToDeadline()
@@ -120,48 +85,10 @@ export const HomePage = () => {
         <nav className="secondary-navigation">
           <ul>
             <li>
-              <a href="">
-                Woman's Fashion
-                <ul>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                </ul>
-              </a>
+              <NavLink to="">Woman's Fashion</NavLink>
             </li>
             <li>
-              <a href="">
-                Man's Fashion
-                <ul>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                </ul>
-              </a>
+              <NavLink to="">Man's Fashion</NavLink>
             </li>
             <li>
               <a href="">Electronics</a>
@@ -192,14 +119,14 @@ export const HomePage = () => {
       </div>
       <ProductCardContainer
         button={{
-          text: 'View All Products',
+          text: 'Shop Now',
           action: () => console.log('test'),
         }}
         cardsData={todayProducts}
       />
       <div className="categories-navigation">
-        {categories.map((category) => (
-          <NavLink to="">
+        {categories.map((category, i) => (
+          <NavLink to="" key={i}>
             <img src={category.path} alt={`${category.text} icon`} />
             <p>{category.text}</p>
           </NavLink>

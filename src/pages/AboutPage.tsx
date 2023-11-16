@@ -1,4 +1,11 @@
 import { IEmployee } from '../utils/interfaces';
+import { CiShop } from 'react-icons/ci';
+import { HiOutlineCurrencyDollar } from 'react-icons/hi';
+import { BiSolidShoppingBagAlt } from 'react-icons/bi';
+import { TbMoneybag } from 'react-icons/tb';
+import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { IoShieldCheckmark } from 'react-icons/io5';
+
 import appData from '../utils/fakeData.json';
 
 const { employees }: { employees: IEmployee[] } = appData;
@@ -20,26 +27,29 @@ export const AboutPage = () => {
           fast. Exclusive offers a diverse assotment in categories ranging from
           consumer.
         </p>
-        <img src="" alt="two happy customers" />
+        <img
+          src="https://plus.unsplash.com/premium_photo-1658506871173-7498f5371ed1?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3VzdG9tZXJzfGVufDB8fDB8fHww"
+          alt="three happy customers"
+        />
       </section>
       <section className="about-page__testimonial">
         <div className="testimonial-card">
-          <img src="" alt="store icon" />
+          <CiShop />
           <p>10.5k</p>
           <h3>Sallers active our site</h3>
         </div>
         <div className="testimonial-card">
-          <img src="" alt="dollar icon" />
+          <HiOutlineCurrencyDollar />
           <p>33k</p>
           <h3>Mopnthly Produduct Sale</h3>
         </div>
         <div className="testimonial-card">
-          <img src="" alt="shopping bag icon" />
+          <BiSolidShoppingBagAlt />
           <p>45.5k</p>
           <h3>Customer active in our site</h3>
         </div>
         <div className="testimonial-card">
-          <img src="" alt="money bag icon" />
+          <TbMoneybag />
           <p>25k</p>
           <h3>Anual gross sale in our site</h3>
         </div>
@@ -90,17 +100,17 @@ export const AboutPage = () => {
       </section>
       <section className="main-proposition">
         <div>
-          <img src="" alt="fast vehicle icon" />
+          <FaPhoneAlt />
           <h3>free and fast delivery</h3>
           <p>Free delivery for all orders over $140</p>
         </div>
         <div>
-          <img src="" alt="headphones icon" />
+          <FaEnvelope />
           <h3>24/7 customer service</h3>
           <p>Friendly 24/7 customer support</p>
         </div>
         <div>
-          <img src="" alt="approved shield icon" />
+          <IoShieldCheckmark />
           <h3>money back guarantee</h3>
           <p>we return money within 30 days</p>
         </div>

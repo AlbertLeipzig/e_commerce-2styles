@@ -1,4 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import {
+  FaRegCopyright,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin,
+} from 'react-icons/fa';
+import { BsFillSendFill } from 'react-icons/bs';
+import { ImFacebook } from 'react-icons/im';
+
 export const Footer = () => {
   return (
     <footer>
@@ -7,6 +16,7 @@ export const Footer = () => {
         <p>Subscriber</p>
         <p>Get 10% off your first order</p>
         <input type="Enter your email " />
+        <BsFillSendFill />
       </div>
       <div>
         <h3>Support</h3>
@@ -42,19 +52,20 @@ export const Footer = () => {
           <img src="" alt="app store link" />
         </a>
         <a href="" target="_blank">
-          <img src="" alt="fb link" />
+          <ImFacebook />
         </a>
         <a href="" target="_blank">
-          <img src="" alt="tw link" />
+          <FaTwitter />
         </a>
         <a href="" target="_blank">
-          <img src="" alt="ig link" />
+          <FaInstagram />
         </a>
         <a href="" target="_blank">
-          <img src="" alt="li link" />
+          <FaLinkedin />
         </a>
       </div>
       <div>
+        <FaRegCopyright />
         <p>Copyright Rimel 2022. All right reserved</p>
       </div>
     </footer>

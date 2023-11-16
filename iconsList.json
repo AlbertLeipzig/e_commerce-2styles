@@ -4,7 +4,7 @@
   "arrowDown": "<IoIosArrowDown />",
   "complete arrow left": "<FaArrowLeft />",
   "complete arrow right": "<FaArrowRight />",
-  "search / magnifying glass": "<IoIosArrowDown />",
+  "search / magnifying glass": "<CiSearch />",
   "heart / like": "<CiHeart />",
   "shopping cart": "<CiShoppingCart />",
   "smartphone": "<MdOutlineSmartphone />",
@@ -22,10 +22,11 @@
   "li": "<FaLinkedin />",
   "enter your email": "<BsFillSendFill />",
   "shop / sellers active": "<CiShop />",
-  "dolar": "<CiShop />",
+  "dolar": "<HiOutlineCurrencyDollar  />",
   "shopping bag": "<BiSolidShoppingBagAlt />",
   "money bag": "<TbMoneybag />",
   "classic telephone": "<FaPhoneAlt />",
   "envelope": "<FaEnvelope />",
-  "copyright": "<FaRegCopyright />"
+  "copyright": "<FaRegCopyright />",
+  "star": "<CiStar />"
 }

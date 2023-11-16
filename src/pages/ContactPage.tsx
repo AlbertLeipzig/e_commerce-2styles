@@ -1,7 +1,4 @@
-import { IUser } from '../utils/interfaces';
-import appData from '../utils/fakeData.json';
-
-const { user }: { user: IUser } = appData;
+import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 export const ContactPage = () => {
   return (
@@ -9,14 +6,14 @@ export const ContactPage = () => {
       <div>
         <div>
           <span>
-            <img src="" alt="call to us icon" />
+            <FaPhoneAlt />
             <h3>Call To Us</h3>
             <p>We are available 24/7, 7 days a week</p>
             <p>Phone : +8801311112222</p>
           </span>
         </div>
         <div>
-          <img src="" alt="write to us icon" />
+          <FaEnvelope />
           <h3>Write To Us</h3>
           <p>Fill out our form and we will contact you within 24 hours</p>
           <p>Emails: customer@exclusive.com</p>
@@ -24,8 +21,8 @@ export const ContactPage = () => {
         </div>
       </div>
       <form action="">
-        <input type="text" placeholder={`${user.firstName} ${user.lastName}`} />
-        <input type="text" placeholder={user.email} />
+        <input type="text" placeholder="Your Name" />
+        <input type="text" placeholder="Your Email" />
         <input type="text" placeholder="Your Phone" />
         <textarea placeholder="Your Message"></textarea>
         <button>Send Message</button>

@@ -4,8 +4,8 @@ import appData from '../utils/fakeData.json';
 
 const { orders }: { orders: IOrder[] } = appData;
 
-const calculateCosts = () => {
-  const singleProductSubtotal = orders.map(
+const calculateCosts = (userOrders: IOrder[]) => {
+  const singleProductSubtotal = userOrders.map(
     (product) => product.price * product.quantity
   );
   const subtotal = singleProductSubtotal.reduce((acc, curr) => acc + curr, 0);
@@ -19,22 +19,28 @@ export const CartPage = () => {
   return (
     <div className="cart-page">
       <table>
-        <th>
+        <tr>
           <td>Product</td>
           <td>Price</td>
           <td>Quantity</td>
           <td>Subtotal</td>
-        </th>
-        {orders.map((product) => (
-          <tr>
-            <td>{product.images[0]}</td>
-            <td>${product.price}</td>
+        </tr>
+        {orders.map((order) => (
+          <tr key={order.id}>
             <td>
-              <select name="" id="">
-                <option value="" defaultValue={product.quantity}></option>
+              <img src={order.images[0]} alt={`${order.title} image`} />
+            </td>
+            <td>${order.price}</td>
+            <td>
+              <select name="" id="" value={order.quantity}>
+                {[...Array(10).keys()].map((num) => (
+                  <option value={num + 1} key={num + 1}>
+                    {num + 1}
+                  </option>
+                ))}
               </select>
             </td>
-            <td>{calculateCosts().singleProductSubtotal}</td>
+            <td>${calculateCosts([order]).singleProductSubtotal}</td>
           </tr>
         ))}
       </table>
@@ -52,19 +58,19 @@ export const CartPage = () => {
           {' '}
           <div>
             <p>Subtotal:</p>
-            <p>{calculateCosts().subtotal} $</p>
+            <p>${calculateCosts(orders).subtotal}</p>
           </div>
           <div>
             <p>Shipping:</p>
             <p>
-              {calculateCosts().shipping === 0
+              {calculateCosts(orders).shipping === 0
                 ? 'Free'
-                : `${calculateCosts().shipping} $`}
+                : `$${calculateCosts(orders).shipping}`}
             </p>
           </div>
           <div>
             <p>Total:</p>
-            <p>{calculateCosts().total} $</p>
+            <p>{calculateCosts(orders).total} $</p>
           </div>
         </div>
       </div>
