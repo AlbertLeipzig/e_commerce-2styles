@@ -2,6 +2,10 @@ import React from 'react';
 import { IProduct } from '../utils/interfaces';
 import { CiStar } from 'react-icons/ci';
 
+// the button addToCart only appears in Wishlist
+// it's display does NOT depend on js, but in css
+// in case the component is inside the class .wishlist it will get display : none
+
 export const ProductCard: React.FC<IProduct> = ({
   title,
   images,
@@ -13,6 +17,7 @@ export const ProductCard: React.FC<IProduct> = ({
   return (
     <div className="product-card">
       <img src={images[0]} alt="" />
+      <button>Add To Cart</button>
       <h3>{title}</h3>
       <div className="product-card__price-container">
         <p>{price}</p>

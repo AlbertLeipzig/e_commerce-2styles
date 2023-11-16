@@ -1,9 +1,10 @@
 import React from 'react';
 import { IProduct } from '../utils/interfaces';
 import { ProductCardContainer } from '../components/ProductCardContainer';
+import fakeData from '../utils/fakeData.json';
 
-const wishlistData: IProduct[] = [];
-const userRecommendationsData: IProduct[] = [];
+const wishlistData: IProduct[] = fakeData.products.slice(25, 27);
+const userRecommendationsData: IProduct[] = fakeData.products.slice(54, 58);
 
 export const WishListPage: React.FC = () => {
   return (
