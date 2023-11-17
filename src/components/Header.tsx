@@ -3,7 +3,7 @@ import { MainNavigation } from './MainNavigation';
 import { CiHeart, CiShoppingCart, CiSearch } from 'react-icons/ci';
 export const Header = () => {
   return (
-    <header style={{ backgroundColor: 'hsl(0 0% 30%' }}>
+    <header>
       <div className="header__top">
         <p>
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!

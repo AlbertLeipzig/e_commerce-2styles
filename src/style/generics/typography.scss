@@ -1,0 +1,130 @@
+// Import colors
+@use './colors.scss' as *;
+
+// Define font faces
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url('/public/assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Trirong', serif;
+  src: url('/public/assets/fonts/Trirong-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins', sans-serif;
+  src: url('/public/assets/fonts/Poppins-Regular.ttf');
+}
+
+$font-sizes: (
+  xs: 1.2rem,
+  s: 1.6rem,
+  m: 2rem,
+  l: 2.4rem,
+  xl: 3.6rem,
+);
+
+@mixin title {
+  font-family: 'Montserrat';
+  font-size: map-get($font-sizes, xl);
+  color: $primary-dark;
+  line-height: 1.2em;
+}
+
+@mixin subtitle {
+  font-family: 'Trirong';
+  font-size: map-get($font-sizes, l);
+  color: $primary-dark;
+  line-height: 1.4em;
+}
+
+@mixin base-font {
+  font-family: 'Poppins';
+  font-size: map-get($font-sizes, s);
+  color: $primary-dark;
+  line-height: 1.6em;
+}
+
+@mixin base-font-bold {
+  @include base-font;
+  font-weight: 700;
+}
+
+@mixin base-font--active {
+  @include base-font;
+  text-decoration: underline;
+}
+
+@mixin text-small {
+  font-family: 'Poppins';
+  font-size: map-get($font-sizes, xs);
+  color: $primary-dark;
+}
+
+@mixin component-title {
+  font-family: 'Poppins';
+  font-size: map-get($font-sizes, m);
+  color: $primary-dark;
+}
+
+@mixin base-font--bold-accent {
+  @include base-font-bold;
+  color: $accent;
+}
+
+h1 {
+  @include title;
+}
+
+h2 {
+  @include subtitle;
+}
+
+h3 {
+  @include component-title;
+}
+
+p {
+  @include base-font;
+}
+
+a {
+  text-decoration: none;
+  @include base-font;
+  &:focus {
+    @include base-font--active;
+  }
+  &:active {
+    @include base-font--active;
+  }
+}
+
+li {
+  @include base-font;
+}
+
+button {
+  @include base-font;
+  color: $secondary;
+  padding: 0.5em 1.5em;
+  transition: 300ms;
+  background-color: $accent;
+  border: none;
+  border-radius: 4px;
+  &:hover {
+    background-color: $accent-light;
+  }
+}
+
+select {
+  @include base-font;
+  background: none;
+  border: none;
+}
+
+.button-light {
+  @extend button;
+  background: none;
+  border: 1px solid $accent;
+}
