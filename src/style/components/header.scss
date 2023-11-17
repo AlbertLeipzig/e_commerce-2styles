@@ -1,0 +1,59 @@
+@use '../generics/generics.scss' as *;
+
+.header {
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(50vw 1fr 1fr);
+    grid-template-areas: '. cta select';
+    background-color: $primary-dark;
+    padding: 1vh 0;
+    p,
+    a,
+    select option {
+      color: $secondary-light;
+    }
+
+    .cta {
+      grid-area: cta;
+      display: flex;
+      gap: 10px;
+    }
+    select {
+      grid-area: select;
+      color: white;
+      width: fit-content;
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    align-items: center;
+    padding: 3vh 5vw;
+    grid-template-columns: 1fr, 40vw, auto, auto;
+    grid-template-areas: 'logo nav search icons';
+
+    h2 {
+      grid-area: logo;
+    }
+    nav {
+      grid-area: nav;
+      justify-self: center;
+    }
+    &-input {
+      grid-area: search;
+      justify-self: right;
+      svg {
+        position: relative;
+        right: 2vw;
+      }
+    }
+    .icons {
+      grid-area: icons;
+      justify-self: left;
+      margin-left: 1vw;
+      a {
+        margin: 0 10px;
+      }
+    }
+  }
+}

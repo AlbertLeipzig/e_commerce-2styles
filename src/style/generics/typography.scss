@@ -104,6 +104,10 @@ li {
   @include base-font;
 }
 
+input {
+  padding: 0.5em 3em 0.5em 0.5em;
+}
+
 button {
   @include base-font;
   color: $secondary;
