@@ -30,6 +30,7 @@ $font-sizes: (
   font-size: map-get($font-sizes, xl);
   color: $primary-dark;
   line-height: 1.2em;
+  width: fit-content;
 }
 
 @mixin subtitle {
@@ -104,7 +105,7 @@ li {
   @include base-font;
 }
 
-@mixin input($variation) {
+@mixin input($variation: 'light') {
   padding: 0.5em 3em 0.5em 0.5em;
   border-radius: 4px;
 
@@ -118,7 +119,7 @@ li {
 }
 
 input {
-  background: none;
+  @include input;
 }
 
 button {

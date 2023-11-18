@@ -1,0 +1,41 @@
+@use '../generics/generics.scss' as *;
+.auth-page {
+  display: flex;
+  img {
+    width: 50vw;
+    height: 50vw;
+    margin-right: 5vw;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 35vw;
+    p {
+      margin-bottom: 2vh;
+      &:last-of-type {
+        text-align: center;
+        margin-top: 1.5vh;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    input {
+      background: none;
+      border-radius: 0;
+      border-bottom: 1px solid $primary-light;
+      margin-bottom: 2vh;
+    }
+    button {
+      width: 100%;
+      margin-bottom: 1vh;
+    }
+    .google-signup {
+      text-align: center;
+    }
+  }
+}
