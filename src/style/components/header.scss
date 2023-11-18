@@ -34,17 +34,23 @@
 
     h2 {
       grid-area: logo;
+      font-weight: 700;
     }
     nav {
       grid-area: nav;
       justify-self: center;
     }
     &-input {
+      @include input('light');
+      border: none;
       grid-area: search;
       justify-self: right;
-      svg {
-        position: relative;
-        right: 2vw;
+      input {
+        border: none;
+        svg {
+          position: relative;
+          right: 2vw;
+        }
       }
     }
     .icons {
