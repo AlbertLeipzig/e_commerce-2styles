@@ -1,0 +1,54 @@
+@use '../generics/generics.scss' as *;
+.product-card {
+  height: 350px;
+  width: 270px;
+
+  h3 {
+    @include base-font-bold;
+    margin: 15px 0;
+  }
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+  button {
+    display: none;
+  }
+  svg {
+    color: $accent;
+  }
+  &__price-container {
+    display: flex;
+
+    p:nth-child(1) {
+      color: $accent;
+      &::before {
+        content: '$';
+      }
+    }
+    p:nth-child(2) {
+      color: $primary;
+      margin-left: 10px;
+      &::before {
+        content: '$';
+      }
+    }
+  }
+  &__reviews {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+      color: $primary;
+      &::before {
+        content: '(';
+        margin-right: 2px;
+      }
+      &::after {
+        content: ')';
+        margin-left: 2px;
+      }
+    }
+  }
+}

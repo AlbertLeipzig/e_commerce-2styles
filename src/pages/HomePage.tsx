@@ -79,7 +79,6 @@ export const HomePage = () => {
 
   return (
     <div className="home-page">
-      <h1>Test</h1>
       <div className="home-page__hero">
         <nav className="secondary-navigation">
           <ul>

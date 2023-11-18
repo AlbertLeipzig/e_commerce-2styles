@@ -25,12 +25,14 @@ export const ProductCard: React.FC<IProduct> = ({
         <p>{price}</p>
         <p>{fullPrice}</p>
       </div>
-      <p>
-        {Array.from({ length: stars }).map((star, i) => (
-          <CiStar key={i} />
-        ))}
-      </p>
-      <p>{numberOfReviews}</p>
+      <div className="product-card__reviews">
+        <div>
+          {Array.from({ length: stars }).map((star, i) => (
+            <CiStar key={i} />
+          ))}
+        </div>
+        <p>{numberOfReviews}</p>
+      </div>
     </div>
   );
 };
